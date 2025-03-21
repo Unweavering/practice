@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/mydb?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    url : jdbd:mysql://localhost/mydb?useSSL=false&serverTimzone=UTC&allowPublicKeyRetrieval=true
     username: root
     password: 1234
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -12,10 +12,12 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
         format_sql: true
-
-server:
+  security:
+    user:
+      name: admin
+      password: admin
+sever:
   port: 8080
-
 jwt:
   secret: mySuperSecretKeyWhichShouldBeVeryLongAndRandom
   expiration: 3600000
